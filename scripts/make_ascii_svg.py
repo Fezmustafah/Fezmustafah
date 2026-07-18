@@ -80,9 +80,11 @@ def make_svg(lines, rows):
         clip_id = f"c{i}"
         text = html.escape(line, quote=False)
         # per-row clip that wipes 0 -> full width
+        # base width is FULL so GitHub's static render shows the whole row; the
+        # wipe (0 -> full) only enhances browsers that run the animation.
         parts.append(
             f'<clipPath id="{clip_id}">'
-            f'<rect x="{PAD:.1f}" y="{y - LINE_H:.1f}" width="0" height="{LINE_H:.1f}">'
+            f'<rect x="{PAD:.1f}" y="{y - LINE_H:.1f}" width="{grid_w:.1f}" height="{LINE_H:.1f}">'
             f'<animate attributeName="width" from="0" to="{grid_w:.1f}" '
             f'begin="{begin:.3f}s" dur="{TYPE_DUR:.3f}s" '
             f'calcMode="spline" keySplines="0.4 0 0.2 1" keyTimes="0;1" '

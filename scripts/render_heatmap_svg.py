@@ -73,7 +73,9 @@ def build(data):
         "<style>"
         "@keyframes pop{from{opacity:0;transform:translateY(-8px)}"
         "to{opacity:1;transform:translateY(0)}}"
-        ".cell{opacity:0;transform-box:fill-box;"
+        # base state is VISIBLE (opacity:1) so GitHub's static render shows the
+        # full grid; the reveal only enhances browsers that run the animation.
+        ".cell{opacity:1;transform-box:fill-box;"
         "animation:pop .45s ease-out forwards}"
         "@media(prefers-reduced-motion:reduce){"
         ".cell{animation:none;opacity:1}}"

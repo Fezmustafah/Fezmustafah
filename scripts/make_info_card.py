@@ -77,8 +77,10 @@ def anim_group(inner, order):
     if STATIC:
         return f'<g>{inner}</g>'
     begin = START + order * STAGGER
+    # base state is the FINAL visible state (opacity 1, no offset) so GitHub's
+    # static render shows the card; the animate elements only enhance playback.
     return (
-        f'<g opacity="0" transform="translate(-10,0)">'
+        f'<g opacity="1" transform="translate(0,0)">'
         f'<animate attributeName="opacity" from="0" to="1" '
         f'begin="{begin:.2f}s" dur="0.45s" fill="freeze"/>'
         f'<animateTransform attributeName="transform" type="translate" '
