@@ -18,9 +18,11 @@
 </div>
 
 <!--
-  Everything above is self-contained animated SVG (GitHub strips <script> and
-  inline CSS from READMEs, but renders SVGs embedded via <img> and runs their
-  SMIL / CSS-keyframe animations).
+  Everything above is self-contained SVG embedded via <img> (GitHub strips
+  <script> and sanitizes inline CSS from READMEs). Note: GitHub serves these
+  raw SVGs sandboxed, so it renders each SVG's RESTING frame — the generators
+  set that resting frame to the fully-visible state, and the SMIL / CSS-keyframe
+  reveals only play in contexts that run SVG animation (e.g. opened directly).
 
   Regenerate:
     python scripts/prep_photo.py <your-photo.jpg>   # once per photo
