@@ -1,0 +1,12 @@
+# Daily automation (workflow) needs only these two:
+requests==2.32.3
+beautifulsoup4==4.12.3
+
+# Portrait pipeline — runs LOCALLY only, when you change your photo.
+# Not installed by the daily GitHub Action.
+pillow
+numpy
+opencv-python-headless
+# rembg is optional: background removal. If it fails to install on your
+# Python version, prep_photo.py falls back automatically (no rembg needed).
+# rembg
