@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="636" height="380" viewBox="0 0 636 380" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace">
+  <rect width="100%" height="100%" rx="10" fill="#0d1117"/>
+  <text x="24" y="40" fill="#8b949e" font-size="13">avi@github ~ $ ./render_portrait.sh</text>
+  <g transform="translate(0,26)">
+    <text x="24" y="120" fill="#39d353" font-size="15" font-weight="700">F M</text>
+    <text x="24" y="150" fill="#c9d1d9" font-size="13">ASCII portrait pending source photo.</text>
+    <text x="24" y="172" fill="#8b949e" font-size="12">Drop source-photo.jpg in the repo root, then run:</text>
+    <text x="24" y="200" fill="#58a6ff" font-size="12">python scripts/prep_photo.py source-photo.jpg</text>
+    <text x="24" y="220" fill="#58a6ff" font-size="12">python scripts/make_ascii_svg.py</text>
+  </g>
+  <rect x="24" y="300" width="9" height="16" fill="#39d353">
+    <animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.5;0.5;1" dur="1s" repeatCount="indefinite"/>
+  </rect>
+</svg>
