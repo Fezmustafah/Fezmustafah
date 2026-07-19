@@ -35,13 +35,14 @@ jobs:
       - name: Daily heartbeat
         run: date -u +"%Y-%m-%dT%H:%M:%SZ" > data/heartbeat.txt
 
-      # Commit is authored as YOU (not github-actions[bot]) so it counts toward
-      # your contribution graph. The author email must be verified on your
-      # GitHub account.
+      # Commit is authored as the Fezmustafah account (not github-actions[bot])
+      # so it counts toward THIS profile's contribution graph. We use the
+      # account's GitHub noreply email (id 274328481) — always attributed to
+      # Fezmustafah, regardless of which personal email is verified where.
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "chore: daily profile update [skip ci]"
           file_pattern: "data/contributions.json contrib-heatmap.svg data/heartbeat.txt"
           commit_user_name: "Fezmustafah"
-          commit_user_email: "faizmustafa968@gmail.com"
-          commit_author: "Fezmustafah <faizmustafa968@gmail.com>"
+          commit_user_email: "274328481+Fezmustafah@users.noreply.github.com"
+          commit_author: "Fezmustafah <274328481+Fezmustafah@users.noreply.github.com>"
