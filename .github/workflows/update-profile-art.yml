@@ -30,7 +30,18 @@ jobs:
       - run: python scripts/fetch_contributions.py --user ${{ github.repository_owner }}
       - run: python scripts/render_heatmap_svg.py
 
+      # Guarantee a change every run so a commit always happens (keeps the
+      # daily square green even on days the heatmap data didn't change).
+      - name: Daily heartbeat
+        run: date -u +"%Y-%m-%dT%H:%M:%SZ" > data/heartbeat.txt
+
+      # Commit is authored as YOU (not github-actions[bot]) so it counts toward
+      # your contribution graph. The author email must be verified on your
+      # GitHub account.
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "chore: refresh contribution graph [skip ci]"
-          file_pattern: "data/contributions.json contrib-heatmap.svg"
+          commit_message: "chore: daily profile update [skip ci]"
+          file_pattern: "data/contributions.json contrib-heatmap.svg data/heartbeat.txt"
+          commit_user_name: "Fezmustafah"
+          commit_user_email: "faizmustafa968@gmail.com"
+          commit_author: "Fezmustafah <faizmustafa968@gmail.com>"
